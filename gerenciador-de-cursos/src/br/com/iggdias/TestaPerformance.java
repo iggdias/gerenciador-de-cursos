@@ -12,12 +12,13 @@ public class TestaPerformance {
 		Collection<Integer> numerosHS = new HashSet<Integer>();
 
 		long inicio, fim, tempoDeExecucao;
-
+		final long TAM_COLLECTION = 500000;
+		
 		System.out.println("utilizando ArrayList");
 		
 		inicio = System.currentTimeMillis();
 
-		for (int i = 1; i <= 50000; i++) {
+		for (int i = 1; i <= TAM_COLLECTION; i++) {
 			numerosAL.add(i);
 		}
 
@@ -41,7 +42,7 @@ public class TestaPerformance {
 		
 		inicio = System.currentTimeMillis();
 
-		for (int i = 1; i <= 50000; i++) {
+		for (int i = 1; i <= TAM_COLLECTION; i++) {
 			numerosHS.add(i);
 		}
 

@@ -26,9 +26,24 @@ public class Curso {
 	public List<Aula> getAulas() {
 		return Collections.unmodifiableList(this.aulas);
 	}
-	
+
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
 
 	}
+
+	private int getTempoTotal() {
+		int tempoTotal = 0;
+		for (Aula aula : aulas) {
+			tempoTotal += aula.getTempo();
+		}
+		return tempoTotal;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "[Curso: \"" + this.getNome() + "\" , Tempo total de aulas: " + this.getTempoTotal() + " min]";
+	}
+	
 }
