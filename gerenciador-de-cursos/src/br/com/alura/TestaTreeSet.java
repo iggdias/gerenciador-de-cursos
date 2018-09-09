@@ -12,14 +12,12 @@ public class TestaTreeSet {
 		Recibo rec2 = new Recibo(3);
 		Recibo rec3 = new Recibo(10);
 
-		ReciboComparator rc = new ReciboComparator();
-
-		Set<Recibo> listaDeRecibos = new TreeSet<Recibo>(rc);
+		Set<Recibo> listaDeRecibos = new TreeSet<Recibo>(new ReciboComparator());
 
 		listaDeRecibos.add(rec1);
 		listaDeRecibos.add(rec2);
 		listaDeRecibos.add(rec3);
-		
+
 		System.out.println(listaDeRecibos);
 	}
 
@@ -45,7 +43,7 @@ class Recibo {
 	public String toString() {
 		return "[Recibo: " + this.numeroDoRecibo + "]";
 	}
-	
+
 }
 
 class ReciboComparator implements Comparator<Recibo> {
